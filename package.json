@@ -1,0 +1,35 @@
+{
+  "name": "crypto-public-balance",
+  "version": "1.0.0",
+  "description": "Get the balance of various crypto currencies based on given public addresses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericvrp/crypto-public-balance.git"
+  },
+  "keywords": [
+    "balance",
+    "crypto",
+    "currencies",
+    "currency",
+    "ethereum",
+    "bitcoin",
+    "iota",
+    "public",
+    "addresses"
+  ],
+  "author": "Eric van Riet Paap",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ericvrp/crypto-public-balance/issues"
+  },
+  "homepage": "https://github.com/ericvrp/crypto-public-balance#readme",
+  "dependencies": {
+    "blockchain.info": "^2.8.1",
+    "iota.lib.js": "^0.4.0",
+    "node-fetch": "^1.7.2"
+  }
+}
