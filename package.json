@@ -30,6 +30,7 @@
   "dependencies": {
     "blockchain.info": "^2.8.1",
     "iota.lib.js": "^0.4.0",
-    "node-fetch": "^1.7.2"
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
   }
 }

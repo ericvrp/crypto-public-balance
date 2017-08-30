@@ -11,9 +11,7 @@ Usage
 
 ```
   const cryptoPublicBalance = require('crypto-public-balance')
-
-  const balance  = cryptoPublicBalance.get('ETH', '0x...')
-  const balances = cryptoPublicBalance.get('ETH', ['0x...'])
+  const balances = cryptoPublicBalance.get(cryptoCurrency, [publicAddresses])
 ```
 
 Currently supported crypto currencies (pull requests are very welcome!)
