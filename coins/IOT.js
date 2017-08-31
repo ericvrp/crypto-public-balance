@@ -6,15 +6,15 @@ var iota = new IOTA({ provider: 'http://node01.iotatoken.nl:14265' })
 var iotaApiGetBalances = Promise.promisify(iota.api.getBalances, {context: iota.api})
 
 
-const get = (publicAddresses, balances) => {
-  const newPromise = iotaApiGetBalances(publicAddresses, 100)
-  newPromise.then(json => {
+const get = (publicAddresses) => {
+  return iotaApiGetBalances(publicAddresses, 100).then(json => {
     // console.log(json)
+    const balances = []
     for (const balance of json.balances) {
       balances.push([balance / 10**6, 'IOT'])
     }
+    return balances
   })
-  return newPromise
 } // end of get(...)
 
 
