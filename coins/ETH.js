@@ -32,6 +32,7 @@ const get = (publicAddresses, balances) => {
   return promises
 } // end of get(...)
 
+
 module.exports = {
   get
 }
