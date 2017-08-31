@@ -1,19 +1,18 @@
-// var bitcoinBlockchainInfoBlockExplorer = require('blockchain.info/blockexplorer') // https://github.com/blockchain/api-v1-client-node
+var bitcoinBlockchainInfoBlockExplorer = require('blockchain.info/blockexplorer') // https://github.com/blockchain/api-v1-client-node
 
 
-/*
-  case 'BTC':
-    switch (type) {
-      case 'address':
-        bitcoinBlockchainInfoBlockExplorer.getBalance(value).then(response => {
-          logInFiatCurrencies(response[value].final_balance / 10**8, sym, fiatCurrencies, prices)
-        })
-        break
+const get = (publicAddresses, balances) => {
+  const newPromise = bitcoinBlockchainInfoBlockExplorer.getBalance(publicAddresses)
+  newPromise.then(response => {
+    // console.log(response)
+    for (const address of publicAddresses) {
+      balances.push([response[address].final_balance / 10**8, 'BTC'])
+    }
+  })
+  return newPromise
+} // end of get(...)
 
-      default:
-        console.warn('unknown', sym, 'type', type)
-        break
-    } // end of switch (type)
-    break // end of case 'BTC'
 
-*/
+module.exports = {
+  get
+}

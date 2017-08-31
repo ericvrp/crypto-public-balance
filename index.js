@@ -13,7 +13,7 @@ const get = (cryptoCurrency, publicAddresses, balances) => {
     return []
   }
 
-  console.log('crypto-public-balance.get', cryptoCurrency, publicAddresses, balances)
+  // console.log('crypto-public-balance.get', cryptoCurrency, publicAddresses, balances)
   return coin.get(publicAddresses, balances)
 }
 
