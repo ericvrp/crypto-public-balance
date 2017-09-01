@@ -17,6 +17,8 @@ const get = (cryptoCurrency, publicAddresses, balances) => {
   return coin.get(publicAddresses, balances)
 }
 
+
 module.exports = {
-  get
+  coins,
+  get,
 }
