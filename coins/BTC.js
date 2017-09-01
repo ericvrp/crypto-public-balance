@@ -6,7 +6,10 @@ const get = (publicAddresses) => {
     // console.log(response)
     const balances = []
     for (const address of publicAddresses) {
-      balances.push([response[address].final_balance / 10**8, 'BTC'])
+      const { final_balance } = response[address]
+      if (final_balance <= 0.00000) continue
+      // console.log(final_balance)
+      balances.push([final_balance / 10**8, 'BTC'])
     }
     return balances
   })
