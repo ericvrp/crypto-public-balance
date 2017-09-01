@@ -16,7 +16,7 @@ const get = (publicAddresses) => {
       balances.push([json.ETH.balance, 'ETH'])
       if (json.tokens) { // output ERC20 tokens information
         for (const token of json.tokens) {
-          if (token.balance <= 0.00000) continue
+          // if (token.balance <= 0.00000) continue
           const { tokenInfo } = token
           const balance = token.balance / 10**tokenInfo.decimals
           balances.push([balance, tokenInfo.symbol])

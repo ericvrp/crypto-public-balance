@@ -11,7 +11,7 @@ const get = (publicAddresses) => {
     // console.log(json)
     const balances = []
     for (const balance of json.balances) {
-      if (balance <= 0.00000) continue
+      // if (balance <= 0.00000) continue
       // console.log(balance)
       balances.push([balance / 10**6, 'IOT'])
     }
