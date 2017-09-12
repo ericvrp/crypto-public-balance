@@ -2,13 +2,14 @@ var Promise = require('bluebird')   // http://bluebirdjs.com
 var rp = require('request-promise') // https://github.com/request/request-promise
 
 var IOTA = require('iota.lib.js') // https://github.com/iotaledger/iota.lib.js
-// var iota = new IOTA({ provider: 'http://node01.iotatoken.nl:14265' })
-var iota = new IOTA({ provider: 'http://n1.iota.nu:443' })
-var iotaApiGetBalances = Promise.promisify(iota.api.getBalances, {context: iota.api})
+var iota = new IOTA({ host: 'https://n1.iota.nu', port: 443 })
+
+var IOTAP = require('iotap')
+const iotap = IOTAP.create(iota) // promisified iota library
 
 
 const get = (publicAddresses) => {
-  return iotaApiGetBalances(publicAddresses, 100).then(json => {
+  return iotap.getBalances(publicAddresses, 100).then(json => {
     // console.log(json)
     const balances = []
     for (const balance of json.balances) {
