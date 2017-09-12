@@ -1,10 +1,7 @@
-var Promise = require('bluebird')   // http://bluebirdjs.com
-var rp = require('request-promise') // https://github.com/request/request-promise
+var IOTA    = require('iota.lib.js') // https://github.com/iotaledger/iota.lib.js
+var IOTAP   = require('iotap')       // https://github.com/jimthedev/iotap
 
-var IOTA = require('iota.lib.js') // https://github.com/iotaledger/iota.lib.js
-var iota = new IOTA({ host: 'https://n1.iota.nu', port: 443 })
-
-var IOTAP = require('iotap')
+const iota  = new IOTA({ host: 'https://n1.iota.nu', port: 443 })
 const iotap = IOTAP.create(iota) // promisified iota library
 
 
