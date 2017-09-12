@@ -23,7 +23,7 @@ const get = (publicAddresses) => {
         }
       }
       return balances
-    })).catch(console.error)
+    }).catch(console.error))
   } // next address
 
   return promises
