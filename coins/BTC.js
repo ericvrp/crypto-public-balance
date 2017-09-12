@@ -12,7 +12,7 @@ const get = (publicAddresses) => {
       balances.push([final_balance / 10**8, 'BTC'])
     }
     return balances
-  })
+  }).catch(console.error)
 } // end of get(...)
 
 
