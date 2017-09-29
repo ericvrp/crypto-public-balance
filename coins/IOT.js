@@ -1,7 +1,7 @@
 var IOTA    = require('iota.lib.js') // https://github.com/iotaledger/iota.lib.js
 var IOTAP   = require('iotap')       // https://github.com/jimthedev/iotap
 
-const iota  = new IOTA({ host: 'https://n1.iota.nu', port: 443 })
+const iota  = new IOTA({ host: 'http://node02.iotatoken.nl', port: 14265 })
 const iotap = IOTAP.create(iota) // promisified iota library
 
 
